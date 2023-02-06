@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Olck-Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Olck</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+            <h1>Olck-Fluxus</h1>
+            <h2>Ingeniero en Sistemas - Experto CB-LN</h2>
+            <div class="redes">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mí</h2>
+            <p><span>Hola, soy Olck.</span> Programador de cyberseguridad y sistemas avanzado.</p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Informacion basica</h3>
+                    <ul>
+                        <li>
+                          
+                        </li>
+                        <li>
+                     
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            Secreto(por ahora)
+                        </li>
+                   
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- intereses -->
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-plane"></i>
+                            <span>VIAJAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>MAC</span>
+                        </div>
+                     
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <button>
+                Politica Olck <i class="fa-solid fa-download"></i>
+                <span class="overlay"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>Skills</h2>
+            <div class="fila">
+                <!-- Technical Skill -->
+                <div class="col">
+                    <h3>Technical Skills</h3>
+                    <div class="skill">
+                        <span>Javascript,Golang</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML & CSS</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>100%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Bash,C++</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Ruby,Python</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>81%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Managar</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Professional Skills -->
+                <div class="col">
+                    <h3>Professional Skills</h3>
+                    <div class="skill">
+                        <span>Comunicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>20%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Dedicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Proyect Management</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <input type="text" placeholder="Tú Nombre">
+                    <input type="text" placeholder="Número telefónico">
+                    <input type="text" placeholder="Dirección de correo">
+                    <input type="text" placeholder="Tema">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+                </div>
+                <!-- Mapa -->
+                <div class="col">
+                    <img src="img/ubicacion.png" alt="">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Rusia
+                            </li>
+                            <li>
+                            
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: Secreto (Por ahora)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
